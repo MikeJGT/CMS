@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{form_start(form)}}
+    <div>
+        {{ form_errors(form) }}
+    </div>
+    <div class="row">
+        <div class= "col">
+            {{form_row(form.title)}}
+        </div>
+    </div>
+        <div class="row">
+        <div class= "col">
+            {{form_row(form.start)}}
+        </div>
+    </div>
+        <div class="row">
+        <div class= "col">
+            {{form_row(form.end)}}
+        </div>
+    </div>
+    {{form_end(form)}}
+{% endblock %}
