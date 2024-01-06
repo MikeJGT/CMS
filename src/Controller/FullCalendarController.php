@@ -59,12 +59,16 @@ class FullCalendarController extends AbstractController
         ]);
     }
 
-    #[Route('/full/calendar/events', name:'calendar_events')]
+    #[Route('/full/calendar/events', name:'calendar_events', methods:'POST')]
     public function getEvents(EntityManagerInterface $entityManager, FullCalendarRepository $calendarRepository){
 
         $events = $calendarRepository->getAllEvents();
+        
+        foreach($events as &$event){
+            $event['start']=$event['start']->format('Y-m-d');
+            $event['end']=$event['end']->format('Y-m-d');
+        }
 
-        // dd(json_encode($events));
         return new JsonResponse($events);
     }
 

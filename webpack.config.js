@@ -20,6 +20,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
+    
+    .addEntry('appcss', './assets/styles/app.css')
     .addEntry('app', './assets/app.js')
     .addEntry('mainStyles', './assets/styles/main.scss')
     .addEntry('fullCalendar', './assets/fullCalendar.js')
